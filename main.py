@@ -1,12 +1,13 @@
-import lmstudio as lms  # Import the lmstudio library and alias it as lms
+import lmstudio as lms
 
+# Import the lmstudio library and alias it as lms
+# Enable asynchronous LLM for better performance
 # Model 1 - Chat completion
 
 # Initialize the model with the "llama-3.2-1b-instruct" configuration
 # Optimized for multilingual dialogue use cases, including agentic retrieval and summarization tasks.
 
 # Basic chat completion
-
 
 def basic_chat_response(input_text):
     model = lms.llm("llama-3.2-1b-instruct")
@@ -17,7 +18,7 @@ def basic_chat_response(input_text):
 def chat_with_context(input_text):
     # Chat completion with context
     model = lms.llm("llama-3.2-1b-instruct")
-    chat = lms.Chat("You are a resident AI philosopher.")
+    chat = lms.Chat("Eres un residente de filosofía.")
     chat.add_user_message(input_text)
     result = model.respond(chat)
     return result
@@ -35,7 +36,7 @@ def describe_image(image_path):
     model = lms.llm("qwen2-vl-2b-instruct")
     image_handle = lms.prepare_image(image_path)
     chat = lms.Chat()
-    chat.add_user_message("Describe this image please", images=[image_handle])
+    chat.add_user_message("Describe esta imagen por favor", images=[image_handle])
     prediction = model.respond(chat)
     return prediction
 
@@ -54,10 +55,10 @@ def complete_text(input_text):
 def main():
     # Model 1
     # Basic chat completion
-    # print(basic_chat_response("What is the meaning of life?"))
+    # print(basic_chat_response("Cuál es el propósito de la vida?"))
 
     # Chat completion with context
-    # print(chat_with_context("What is the meaning of life?"))
+    print(chat_with_context("Cuál es el propósito de la vida?"))
 
     # Model 2
     # Describe image
@@ -65,7 +66,7 @@ def main():
 
     # Model 3
     # Complete text
-    print(complete_text("My name is"))
+    # print(complete_text("Mi nombre es"))
 
 
 
