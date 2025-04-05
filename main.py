@@ -48,8 +48,8 @@ def describe_image(image_path):
 
 # Complete text 
 def complete_text(input_text): 
-    model = lms.llm("qwen2.5-7b-instruct")
-    return model.complete(input_text, config={"maxTokens": 100})
+    model = lms.llm("qwen2.5-7b-instruct-1m")
+    return model.complete(input_text, config={"maxTokens": 300})
 
 def main():
     # Model 1
